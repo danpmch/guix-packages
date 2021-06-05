@@ -2,5 +2,5 @@
 (channel
  (version 0)
  (url "https://github.com/danpmch/guix-packages.git")
- (directory "packages"))
+ (directory "channel"))
 

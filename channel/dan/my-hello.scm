@@ -1,4 +1,4 @@
-(define-module (my-hello)
+(define-module (dan my-hello)
   #:use-module (guix licenses)
   #:use-module (guix packages)
   #:use-module (guix build-system gnu)
