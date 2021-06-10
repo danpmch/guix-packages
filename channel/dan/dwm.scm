@@ -33,7 +33,11 @@
              (uri (string-append "https://dl.suckless.org/dwm/dwm-"
                                  version ".tar.gz"))
              (sha256
-              (base32 "03hirnj8saxnsfqiszwl2ds7p0avg20izv9vdqyambks00p2x44p"))))
+              (base32 "03hirnj8saxnsfqiszwl2ds7p0avg20izv9vdqyambks00p2x44p"))
+             (patches (list (origin
+                             (method url-fetch)
+                             (uri "https://dwm.suckless.org/patches/bottomstack/dwm-bottomstack-6.1.diff")
+                             (sha256 (base32 "0kzfgr6km2dhbgvmkb2p5n51ivlqpydngj7fl2ybn2m2k7a7wnpa")))))))
     (build-system gnu-build-system)
     (arguments
      `(#:tests? #f
