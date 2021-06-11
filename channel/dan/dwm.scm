@@ -32,10 +32,10 @@
              (method git-fetch)
              (uri (git-reference
                    (url "https://github.com/danpmch/dwm.git")
-                   (commit "9b60db66a2c49d4f8fa42e3e414afca5f5fb955a")))
+                   (commit "7854369aaa787754a3c7ca547d9b69ee2c2f8d10")))
              (file-name (git-file-name name version))
              (sha256
-              (base32 "1r0s68g5570fjhjxv690iz0ch08jxkm78gv7asyqc5lr7b2vkdxg"))))
+              (base32 "03fflljh24ffg0ihrzwrpmj992nwhgaijd7gl3gqr5kx1r2xbqnb"))))
     (build-system gnu-build-system)
     (arguments
      `(#:tests? #f
@@ -66,8 +66,8 @@
                     "[Desktop Entry]~@
                      Name=dwm~@
                      Comment=Dynamic Window Manager~@
-                     Exec=~a/bin/dwm~@
-                     TryExec=~@*~a/bin/dwm~@
+                     Exec=~a/bin/start-dwm~@
+                     TryExec=~@*~a/bin/start-dwm~@
                      Icon=~@
                      Type=Application~%"
                     output)))
