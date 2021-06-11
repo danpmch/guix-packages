@@ -29,15 +29,13 @@
     (name "dwm")
     (version "6.2")
     (source (origin
-             (method url-fetch)
-             (uri (string-append "https://dl.suckless.org/dwm/dwm-"
-                                 version ".tar.gz"))
+             (method git-fetch)
+             (uri (git-reference
+                   (url "https://github.com/danpmch/dwm.git")
+                   (commit "9b60db66a2c49d4f8fa42e3e414afca5f5fb955a")))
+             (file-name (git-file-name name version))
              (sha256
-              (base32 "03hirnj8saxnsfqiszwl2ds7p0avg20izv9vdqyambks00p2x44p"))
-             (patches (list (origin
-                             (method url-fetch)
-                             (uri "https://dwm.suckless.org/patches/bottomstack/dwm-bottomstack-6.1.diff")
-                             (sha256 (base32 "0kzfgr6km2dhbgvmkb2p5n51ivlqpydngj7fl2ybn2m2k7a7wnpa")))))))
+              (base32 "1r0s68g5570fjhjxv690iz0ch08jxkm78gv7asyqc5lr7b2vkdxg"))))
     (build-system gnu-build-system)
     (arguments
      `(#:tests? #f
@@ -49,7 +47,6 @@
          (replace 'configure
            (lambda _
              (substitute* "Makefile" (("\\$\\{CC\\}") "gcc"))
-             (substitute* "config.def.h" (("Mod1Mask") "Mod4Mask"))
              #t))
         (replace 'install
           (lambda* (#:key outputs #:allow-other-keys)
